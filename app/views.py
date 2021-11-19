@@ -1,13 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http.response import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import Post
 from .forms import CreateUserForm
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
 
 def home_view(request) -> HttpResponse:
     if request.user.is_authenticated:
@@ -81,3 +82,29 @@ class PostCreation(CreateView, LoginRequiredMixin):
         if not request.user.is_authenticated:
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)
+
+class PostUpdate(UpdateView, LoginRequiredMixin):
+    model = Post
+    template_name = "update_post.html"
+    fields = ['title', 'body']
+    success_url = reverse_lazy('dashboard')
+
+    def get_queryset(self):
+        base_qs = super(PostUpdate, self).get_queryset()
+        return base_qs.filter(author=self.request.user)
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)
+
+
+@login_required(login_url="login")
+def delete_post(request, post_id):
+    # check if post belongs to user
+    post = Post.objects.get(id=post_id)
+    if post.author == request.user or request.user.is_superuser:
+        post.delete()
+    # remove it from the database
+    # redirect back to same page
+    return redirect('dashboard')

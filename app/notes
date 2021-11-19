@@ -1,0 +1,18 @@
+Things I would like to add, sorted from easiest to hardest:
+- Drop down menu for top right usernames (logout, dark mode/light mode, etc.)
+- DetailView
+- Spruce up CSS
+- Password Change
+- Commenting
+- Report Button
+- Dark mode
+- Likes, make sure users cannot like more than once
+- Slugify urls
+- User profile page, should include a list of the user's post history
+- Group/topic pages, such as politics or history
+- Sort group posts by most liked/most recent
+- User profile image
+- Allow users to include image and video in posts
+- Allow users to sign up with accounts such as Gmail or Facebook (Auth0)
+- Creating a post appears in a pop-up as opposed to an entirely new page (JavaScript?)
+- Posting Algorithm

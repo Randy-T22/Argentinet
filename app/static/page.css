@@ -3,12 +3,18 @@ body {
   width: 100%;
   height: 100%;
   margin: 0px;
+  background-color: rgb(62, 69, 99);
+}
+
+.collapsible-list {
+  display: none;
+  overflow: hidden;
 }
 
 .header {
   background-color: rgb(72, 180, 247);
   height: 5.8vw;
-  margin-bottom: 3%;
+  margin-bottom: 2%;
   margin-top: -2%;
 }
 
@@ -20,11 +26,17 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.container {
+  padding-top: 1.5%;
+  margin-left: 86%;
+  margin-top: -7.9vw;
+  width: 10vw;
+  height: 5.8vw;
+}
+
 .log-out-button {
   font-size: 2vw;
-  padding-top: 1.5%;
-  padding-left: 90%;
-  margin-top: -5.92vw;
+  text-align: right;
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -42,10 +54,92 @@ a:hover {
   color: black;
 }
 
-.explanation {
+.post-entry {
+  padding-top: 1%;
+  margin-left: 20%;
+  margin-right: 32.5%;
+  margin-bottom: 2%;
+  background-color: rgb(72, 180, 247);
+  box-shadow: 2px 2px 15px black;
+  border-radius: 0.5vw;
+}
+
+.post-author {
+  margin-left: 2.5%;
+  margin-top: 0.25%;
+  font-size: 1vw;
+  color: ghostwhite;
+}
+
+.post-author_button {
+  margin-left: 2.5%;
+  margin-top: -2.5%;
+  font-size: 1vw;
+  color: ghostwhite;
+}
+
+.post-title {
+  margin-left: 2.5%;
+  margin-top: -1.75%;
+  font-size: 2.5vw;
+  color: ghostwhite;
+}
+
+.post-content {
+  margin-left: 7%;
+  margin-right: 2%;
+  padding-bottom: 2.5%;
+  margin-top: -3%;
+  font-size: 1.5vw;
+  color: ghostwhite;
+}
+
+.footer {
+  background-color: rgb(72, 180, 247);
+  height: 3.5vw;
+  margin-top: 2.5%;
+}
+
+.new-post {
+  margin-left: 85.5%;
   text-align: center;
-  font-size: 5vw;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 0%;
+  font-size: 2vw;
+}
+
+.button_area {
+  margin-left: 92.5%;
+  margin-bottom: -3%;
+  position: relative;
+  display: inline-block;
+  background-color: rgb(72, 180, 247);
+}
+
+.edit_button {
+  margin-top: 2%;
+  letter-spacing: 50%;
+  background-color: rgb(72, 180, 247);
+  color: ghostwhite;
+  margin-bottom: -10%;
+  font-size: 1vw;
+  padding-bottom: 10px;
+}
+
+.collapsible-list {
+  display: none;
+  position: absolute;
+  background-color: rgb(23, 166, 255);
+  min-width: 100%;
+  box-shadow: 0px 0px 4px 1px black;
+  padding: 6px 16px;
+
+  margin-top: 5%;
+  z-index: 1;
+}
+
+.delete {
+  margin-top: -2.5%;
+}
+
+.update {
+  margin-top: 15%;
 }
